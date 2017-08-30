@@ -1,0 +1,11 @@
+extends ../layout.jade
+
+block content
+  div(data-page="bin/list").container
+    div.row
+      div.col-sm-9
+        h3 Bins:
+
+        for bin in data.raw.bins
+          - var link = '/' + bin.split(':')[0] + '/' + bin.split(':')[1] + '/view'
+          li: a(href=link)= bin
